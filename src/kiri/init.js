@@ -25,7 +25,7 @@ gapp.register("kiri.init", [], (root, exports) => {
         DEFMODE = SETUP.dm && SETUP.dm.length === 1 ? SETUP.dm[0] : 'FDM',
         STARTMODE = SETUP.sm && SETUP.sm.length === 1 ? SETUP.sm[0] : null,
         DEG2RAD = Math.PI/180,
-        ALL = [MODES.FDM, MODES.LASER, MODES.CAM, MODES.SLA],
+        ALL = [MODES.FDM, MODES.LASER/*, MODES.CAM, MODES.SLA*/],
         CAM = [MODES.CAM],
         SLA = [MODES.SLA],
         FDM = [MODES.FDM],
@@ -2363,7 +2363,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             return lbl;
         }
 
-        for (let mode of ["fdm","sla","cam","laser"]) {
+        for (let mode of kiri.api.feature.modes) {
             if (api.feature.modes.indexOf(mode) >= 0) {
                 $(`mode-${mode}`).appendChild(mksvg(icons[mode]));
             } else {
@@ -2685,10 +2685,9 @@ gapp.register("kiri.init", [], (root, exports) => {
         $('view-top').onclick = space.view.top;
         $('view-home').onclick = space.view.home;
         $('view-clear').onclick = api.platform.clear;
-        $('mode-fdm').onclick = () => { api.mode.set('FDM') };
-        $('mode-sla').onclick = () => { api.mode.set('SLA') };
-        $('mode-cam').onclick = () => { api.mode.set('CAM') };
-        $('mode-laser').onclick = () => { api.mode.set('LASER') };
+        for (let mode of kiri.api.feature.modes) {
+            $(`mode-${mode}`).onclick = () => { api.mode.set(`${mode.toUpperCase()}`) };
+        }
         $('unrotate').onclick = () => {
             api.widgets.for(w => w.unrotate());
             api.selection.update_info();

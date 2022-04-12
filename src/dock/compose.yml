@@ -2,9 +2,19 @@ version: '3.1'
 
 services:
   kirimoto:
-    container_name: grid-apps
+    container_name: launchpad
     build:
       context: ../..
       dockerfile: src/dock/Dockerfile
+    volumes:
+      - type: bind
+        source: ../../src
+        target: /grid/src
+      - type: bind
+        source: ../../web
+        target: /grid/web
+      - type: bind
+        source: ../../apps
+        target: /grid/apps
     ports:
       - "8080:8080"

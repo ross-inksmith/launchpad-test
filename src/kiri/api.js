@@ -29,7 +29,7 @@ const feature = {
     on_load: undefined, // function override file drop loads
     on_add_stl: undefined, // legacy override stl drop loads
     work_alerts: true, // allow disabling work progress alerts
-    modes: [ "fdm", "sla", "cam", "laser" ], // enable device modes
+    modes: [ "fdm", /*"sla", "cam",*/ "laser" ], // enable device modes
     pmode: consts.PMODES.SPEED, // preview modes
     // hover: false, // when true fires mouse hover events
     get hover() {

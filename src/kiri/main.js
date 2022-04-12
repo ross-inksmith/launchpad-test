@@ -892,7 +892,7 @@ gapp.register("kiri.main", [], (root, exports) => {
         // update mode display
         $('app-mode-name').innerHTML = mode === 'CAM' ? 'CNC' : mode;
         // highlight relevant device mode button
-        ["fdm","sla","cam","laser"].forEach(dev => {
+        kiri.api.feature.modes.forEach(dev => {
             let cl = $(`mode-${dev}`).classList;
             if (dev === mode.toLowerCase()) {
                 cl.add("dev-sel");
