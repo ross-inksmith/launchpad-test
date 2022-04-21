@@ -46,6 +46,13 @@
         </div>
         <div class="grow"></div>
         <div id="app-acct">
+            <div id="file-import" class="frow a-end">
+                <i class="fas fa-file-upload"></i>
+                <label lk="import">Add File<label>
+            </div>
+            <div id="acct-help" class="frow a-end">
+                <label lk="help">Help</label>
+            </div>
             <i class="fas fa-user-cog"></i>
             <div id="acct-pop" class="f-col">
                 <div id="acct-menu" class="f-col">
@@ -65,9 +72,6 @@
                     <div id="acct-export" class="f-col a-end">
                         <label lk="export">export</label>
                     </div>
-                    <div id="acct-help" class="f-col a-end">
-                        <label lk="help">help</label>
-                    </div>
                 </div>
             </div>
         </div>
@@ -80,7 +84,7 @@
                 <i class="fas fa-arrow-circle-left"></i>
             </div>
             <div id="lt-options" class="lt-menu lt-enabled">
-                <div id="lt-trash"><i class="fas fa-trash"></i></div>
+                <!-- <div id="lt-trash"><i class="fas fa-trash"></i></div> -->
                 <div id="lt-w-enable"><i class="fas fa-check-circle"></i></div>
                 <div id="lt-w-disable"><i class="fas fa-times-circle"></i></div>
             </div>
@@ -150,7 +154,7 @@
                     <div class="footer"></div>
                 </div>
             </div>
-            <div id="lt-setup" class="lt-menu lt-active">
+            <div id="lt-setup" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-cogs"></i>
                 <label lk="setup">setup</label>
                 <div id="set-pop" class="pop-lcol f-row">
@@ -168,7 +172,7 @@
                     </div>
                 </div>
             </div>
-            <div id="lt-file" class="lt-menu lt-active">
+            <div id="lt-file" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-folder"></i>
                 <label lk="files">files</label>
                 <div id="file-pop" class="pop-lcol f-row">
@@ -176,10 +180,10 @@
                         <i class="fas fa-list"></i>
                         <label lk="recent">recent</label>
                     </div>
-                    <div id="file-import">
-                        <i class="fas fa-file-upload"></i>
-                        <label lk="import">import<label>
-                    </div>
+                    <!-- <div id="file-import"> -->
+                    <!--     <i class="fas fa-file-upload"></i> -->
+                    <!--     <label lk="import">import<label> -->
+                    <!-- </div> -->
                 </div>
             </div>
             <div id="act-sep"></div>
@@ -199,24 +203,32 @@
                         <i class="fas fa-home"></i>
                         <label lk="home">home</label>
                     </div>
-                    <div id="view-clear">
+                    <div id="view-clear" class="launchpad-hide">
                         <i class="far fa-square"></i>
                         <label lk="clear">clear</label>
                     </div>
                 </div>
             </div>
-            <div id="act-slice" class="lt-menu lt-active">
+            <div id="act-preview" class="lt-menu lt-active">
+                <i class="fas fa-cubes"></i>
+                <label id="label-preview" title="show routing and paths" lk="preview">preview</label>
+            </div>
+            <div id="act-animate" class="lt-menu lt-active">
+                <i class="fas fa-running"></i>
+                <label id="label-animate" title="render routing on a mesh" lk="animate">animate</label>
+            </div>
+            <div id="act-slice" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-bars"></i>
                 <label id="label-slice" title="analyze parts" lk="slice">slice</label>
                 <div id="pop-slice" class="pop-lcol f-row">
-                    <div id="act-preview">
-                        <i class="fas fa-cubes"></i>
-                        <label id="label-preview" title="show routing and paths" lk="preview">preview</label>
-                    </div>
-                    <div id="act-animate">
-                        <i class="fas fa-running"></i>
-                        <label id="label-animate" title="render routing on a mesh" lk="animate">animate</label>
-                    </div>
+                    <!-- <div id="act-preview"> -->
+                    <!--     <i class="fas fa-cubes"></i> -->
+                    <!--     <label id="label-preview" title="show routing and paths" lk="preview">preview</label> -->
+                    <!-- </div> -->
+                    <!-- <div id="act-animate"> -->
+                    <!--     <i class="fas fa-running"></i> -->
+                    <!--     <label id="label-animate" title="render routing on a mesh" lk="animate">animate</label> -->
+                    <!-- </div> -->
                     <div id="act-export">
                         <i class="fas fa-file-download"></i>
                         <label id="label-export" title="generate gcode" lk="export">export</label>
@@ -224,7 +236,7 @@
                 </div>
             </div>
             <div id="lt-sep"></div>
-            <div id="lt-render" class="lt-menu lt-active">
+            <div id="lt-render" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-border-style"></i>
                 <label lk="render">render</label>
                 <div id="pop-render" class="pop-lcol f-row">
@@ -245,7 +257,27 @@
                     </div>
                 </div>
             </div>
-            <div id="lt-tools" class="lt-menu lt-active">
+            <div id="tool-rotate" class="lt-menu lt-active">
+                <i class="fas fa-sync-alt"></i>
+                <label lk="rotate">rotate</label>
+            </div>
+            <div id="tool-scale" class="lt-menu lt-active">
+                <i class="fas fa-expand"></i>
+                <label lk="scale">scale</label>
+            </div>
+            <div id="lt-trash" class="lt-menu lt-active">
+                <i class="fas fa-trash"></i>
+                <label lk="delete">delete</label>
+            </div>
+            <div id="lt-w-enable">
+                <i class="fas fa-check-circle"></i>
+                <label lk="enable">enable</label>
+            </div>
+            <div id="lt-w-disable">
+                <i class="fas fa-times-circle"></i>
+                <label lk="disable">disable</label>
+            </div>
+            <div id="lt-tools" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-tools"></i>
                 <label lk="tools">edit</label>
                 <div id="pop-tools" class="pop-lcol f-row">
@@ -312,7 +344,7 @@
                                 <input id="dev-filter" />
                             </div>
                         </div>
-                        <div class="f-col mh0 mh35 j-center a-stretch">
+                        <div class="f-col grow j-start a-stretch">
                             <div id="device-list" class="devlist f-col overy"></div>
                         </div>
                         <label class="header sub" lk="dm_mydd">my devices</label>

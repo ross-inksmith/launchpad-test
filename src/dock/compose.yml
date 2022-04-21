@@ -6,15 +6,5 @@ services:
     build:
       context: ../..
       dockerfile: src/dock/Dockerfile
-    volumes:
-      - type: bind
-        source: ../../src
-        target: /grid/src
-      - type: bind
-        source: ../../web
-        target: /grid/web
-      - type: bind
-        source: ../../apps
-        target: /grid/apps
     ports:
       - "8080:8080"

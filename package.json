@@ -9,6 +9,9 @@
         "type": "git",
         "url": "https://github.com/gridspace/apps.git"
     },
+    "engines": {
+        "node": "v16.14.2"
+    },
     "keywords": [
         "grid.space",
         "kiri:moto",
@@ -20,6 +23,9 @@
         "gcode",
         "slicer"
     ],
+    "scripts": {
+        "start": "gs-app-server"
+    },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@tweenjs/tween.js": "^16.6.0",

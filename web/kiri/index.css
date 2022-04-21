@@ -1876,3 +1876,7 @@ th, tr, td, label {
 .range-detail span {
     flex-grow: 1;
 }
+.launchpad-hide {
+    display: none;
+}
+
