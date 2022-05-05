@@ -47,33 +47,38 @@
         <div class="grow"></div>
         <div id="app-acct">
             <div id="file-import" class="frow a-end">
-                <label lk="import">import</label>
+                <!-- <label lk="import">import</label> -->
+                <span lk="import">import</span>
+                <span class="grow">&nbsp;</span>
                 <i class="fas fa-file-upload"></i>
             </div>
             <div id="acct-help" class="frow a-end launchpad-hide">
                 <label lk="Help">Help</label>
             </div>
-            <label lk="language">language</label>
-            <i class="fas fa-universal-access"></i>
+            <div id="acct-lang">
+                <label>
+                    <span class="grow">&nbsp;</span><span lk="language">language</span>
+                    <i class="fas fa-universal-access"></i>
+                </label>
+                <div id="lang-pop" class="f-col">
+                    <div id="lset-zh">简体中文</div>
+                    <div id="lset-da">dansk</div>
+                    <div id="lset-de">deutsch</div>
+                    <div id="lset-en">english</div>
+                    <div id="lset-es">español</div>
+                    <div id="lset-fr">français</div>
+                    <div id="lset-pl">polskie</div>
+                    <div id="lset-pt">português</div>
+                </div>
+            </div>
+            <div class="launchpad-hide">
             <div id="acct-pop" class="f-col">
                 <div id="acct-menu" class="f-col">
-                    <div id="acct-lang">
-                        <label><i class="fas fa-caret-left"></i><span class="grow">&nbsp;</span><span lk="language">language</span></label>
-                        <div id="lang-pop" class="f-col">
-                            <div id="lset-zh">简体中文</div>
-                            <div id="lset-da">dansk</div>
-                            <div id="lset-de">deutsch</div>
-                            <div id="lset-en">english</div>
-                            <div id="lset-es">español</div>
-                            <div id="lset-fr">français</div>
-                            <div id="lset-pl">polskie</div>
-                            <div id="lset-pt">português</div>
-                        </div>
-                    </div>
                     <div id="acct-export" class="f-col a-end">
                         <label lk="export">export</label>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
@@ -84,10 +89,10 @@
             <div id="lt-back" class="lt-menu lt-enabled">
                 <i class="fas fa-arrow-circle-left"></i>
             </div>
-            <div id="lt-options" class="lt-menu lt-enabled">
+            <div id="lt-options" class="lt-menu lt-enabled f-col">
                 <!-- <div id="lt-trash"><i class="fas fa-trash"></i></div> -->
-                <div id="lt-w-enable"><i class="fas fa-check-circle"></i></div>
-                <div id="lt-w-disable"><i class="fas fa-times-circle"></i></div>
+                <div id="lt-w-enable"><i class="fas fa-check-circle"></i><label lk="enable">enable</label></div>
+                <div id="lt-w-disable"><i class="fas fa-times-circle"></i><label lk="disable">disable</label></div>
             </div>
             <div id="lt-top">
                 <div id="float-tools" class="f-col movable">
@@ -187,7 +192,7 @@
                     <!-- </div> -->
                 </div>
             </div>
-            <div id="act-sep"></div>
+            <div id="act-sep" class="launchpad-hide"></div>
             <div id="lt-view" class="lt-menu lt-active">
                 <i class="fas fa-eye"></i>
                 <label lk="view">view</label>
@@ -269,14 +274,6 @@
             <div id="lt-trash" class="lt-menu lt-active">
                 <i class="fas fa-trash"></i>
                 <label lk="delete">delete</label>
-            </div>
-            <div id="lt-w-enable">
-                <i class="fas fa-check-circle"></i>
-                <label lk="enable">enable</label>
-            </div>
-            <div id="lt-w-disable">
-                <i class="fas fa-times-circle"></i>
-                <label lk="disable">disable</label>
             </div>
             <div id="lt-tools" class="lt-menu lt-active launchpad-hide">
                 <i class="fas fa-tools"></i>

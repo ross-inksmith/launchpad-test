@@ -414,8 +414,8 @@ th, tr, td, label {
 #lang-pop, #ver-pop {
     display: none;
     position: absolute;
-    right: 100%;
-    top: -1px;
+    right: 0;
+    top: 100%;
     align-items: stretch;
     text-align: right;
     border-radius: 3px;
