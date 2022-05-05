@@ -73,7 +73,7 @@ gapp.register("kiri.init", [], (root, exports) => {
                     space.view.home();
                     setTimeout(() => { api.space.save(true) },500);
                     then();
-                    api.help.show();
+                    //api.help.show();
                 });
                 return true;
             }
