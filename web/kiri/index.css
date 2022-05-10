@@ -5,7 +5,7 @@
     --holdbar: linear-gradient(to top, rgba(100,100,100,0.1), rgba(255,255,255,1), rgba(100,100,100,0.1));
     --holdbar-sf: linear-gradient(to top, rgba(200,200,200,0.1), rgba(255,255,255,1), rgba(200,200,200,0.1)) !important;
     --highlight: rgba(126,153,183,0.4);
-    --main-color: rgba(126,153,183,1);
+    --main-color: #6ebe45;
 }
 @font-face {
     font-family: 'Russo One';
@@ -42,6 +42,9 @@ a, a:hover, a:visited {
     padding: 0;
     border: 0;
     margin: 0;
+}
+#launchpad-logo {
+    object-fit: contain;
 }
 #gsbox {
     width: 40px;
@@ -725,7 +728,7 @@ th, tr, td, label {
 .lt-enabled:hover, .lt-active:hover {
     background-color: #eee;
     border: 1px solid #aaa;
-    color: #000;
+    color: var(--main-color);
 }
 .lt-enabled:hover .pop-lcol {
     display: flex;
