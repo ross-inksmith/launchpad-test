@@ -44,7 +44,12 @@ a, a:hover, a:visited {
     margin: 0;
 }
 #launchpad-logo {
-    object-fit: contain;
+    height: 2em;
+    padding: 0.3em;
+    padding-top: 1.25em;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 #gsbox {
     width: 40px;
@@ -382,6 +387,9 @@ th, tr, td, label {
     align-items: center;
     justify-content: flex-end;
 }
+#app-acct div:hover {
+    color: var(--main-color);
+}
 #acct-pop.hoverpop {
     display: flex !important;
 }
@@ -423,6 +431,7 @@ th, tr, td, label {
     text-align: right;
     border-radius: 3px;
     border: 1px solid #ddd;
+    color: #000;
     background-color: white;
     white-space: nowrap;
 }
@@ -430,10 +439,10 @@ th, tr, td, label {
     transform: translateY(-78%);
 }
 #lang-pop > div, #ver-pop > div {
+    color: #000;
     padding: 5px 7px 5px 7px;
 }
 #lang-pop > div:hover, #ver-pop > div:hover {
-    color: #000;
     background-color: #f4f4f4;
 }
 #ver-pop > div {
@@ -698,7 +707,7 @@ th, tr, td, label {
 .pop-lcol > div:hover {
     background-color: #eee;
     border: 1px solid #aaa;
-    color: #000;
+    color: var(--main-color);
 }
 .pop-sel {
     background-color: #ddd !important;
@@ -1671,7 +1680,7 @@ th, tr, td, label {
 .set-group:hover {
     background-color: #eee;
     border: 1px solid #aaa;
-    color: #000;
+    color: var(--main-color);
 }
 .set-pop {
     top: 50%;
