@@ -27,7 +27,7 @@ a, a:hover, a:visited {
     right: 0;
     bottom: 0;
 }
-#app-name {
+#app-name, #launchpad-logo {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,7 +45,7 @@ a, a:hover, a:visited {
 }
 #launchpad-logo {
     height: 2em;
-    padding: 0.3em;
+    padding: 0.5em;
     padding-top: 1.25em;
     background-color: white;
     border: 1px solid black;
