@@ -2683,6 +2683,10 @@ gapp.register("kiri.init", [], (root, exports) => {
         ui.func.export.onclick = (ev) => { ev.stopPropagation(); api.function.export() };
         $('view-arrange').onclick = api.platform.layout;
         $('view-top').onclick = space.view.top;
+        $('view-left').onclick = space.view.left;
+        $('view-right').onclick = space.view.right;
+        $('view-front').onclick = space.view.front;
+        $('view-back').onclick = space.view.back;
         $('view-home').onclick = space.view.home;
         $('view-clear').onclick = api.platform.clear;
         for (let mode of kiri.api.feature.modes) {

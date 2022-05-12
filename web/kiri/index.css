@@ -731,6 +731,9 @@ th, tr, td, label {
 .lt-menu label {
     font-size: small;
 }
+#pop-view {
+    flex-wrap: wrap;
+}
 .lt-enabled, .lt-active {
     color: var(--fg-gray);
 }
