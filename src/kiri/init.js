@@ -1600,7 +1600,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             setup:              $('mod-setup'),
             prefs:              $('mod-prefs'),
             files:              $('mod-files'),
-            saves:              $('mod-saves'),
+            // saves:              $('mod-saves'),
             tools:              $('mod-tools'),
             print:              $('mod-print'),
             local:              $('mod-local'),
@@ -1636,7 +1636,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             setMenu:            $('set-menu'),
             settings:           $('settings'),
             settingsBody:       $('settingsBody'),
-            settingsList:       $('settingsList'),
+            // settingsList:       $('settingsList'),
 
             slider:             $('slider'),
             sliderMax:          $('slider-max'),
@@ -1997,20 +1997,20 @@ gapp.register("kiri.init", [], (root, exports) => {
             rangeGroup:    uc.newGroup("ranges", null, {modes:FDM, group:"ranges"}),
             rangeList:     uc.newRow([], {}),
 
-            settingsGroup: uc.newGroup(LANG.se_menu, $('settings')),
-            settingsTable: uc.newRow([ ui.settingsLoad = uc.newButton(LANG.se_load, settingsLoad) ]),
-            settingsTable: uc.newRow([ ui.settingsSave = uc.newButton(LANG.se_save, settingsSave) ]),
-            settingsSave: $('settingsSave'),
-            settingsName: $('settingsName'),
+            // settingsGroup: uc.newGroup(LANG.se_menu, $('settings')),
+            // settingsTable: uc.newRow([ ui.settingsLoad = uc.newButton(LANG.se_load, settingsLoad) ]),
+            // settingsTable: uc.newRow([ ui.settingsSave = uc.newButton(LANG.se_save, settingsSave) ]),
+            // settingsSave: $('settingsSave'),
+            // settingsName: $('settingsName'),
 
             layers:        uc.setGroup($("layers")),
         });
 
         // override old style settings two-button menu
-        ui.settingsGroup.onclick = settingsLoad;
-        ui.settingsSave.onclick = () => {
-            settingsSave(undefined, ui.settingsName.value);
-        };
+        // ui.settingsGroup.onclick = settingsLoad;
+        // ui.settingsSave.onclick = () => {
+        //     settingsSave(undefined, ui.settingsName.value);
+        // };
 
         function optSelected(sel) {
             let opt = sel.options[sel.selectedIndex];
