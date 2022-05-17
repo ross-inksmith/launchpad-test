@@ -1743,6 +1743,7 @@ th, tr, td, label {
     align-items: center;
 }
 .var-row label {
+    color: black;
     padding: 2px 4px 2px 0;
     flex-grow: 1;
     font-size: smaller;
