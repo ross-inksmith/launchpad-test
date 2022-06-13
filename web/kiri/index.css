@@ -1656,7 +1656,7 @@ th, tr, td, label {
     background-color: #bbb;
 }
 .set-sep {
-    background-color: var(--bg-gray) !important;
+    background-color: var(--main-color) !important;
     height: 10px;
     right: -9px;
 }

@@ -294,6 +294,12 @@ self.kiri.lang['en-us'] = {
     se_load:        "load",
     se_save:        "save",
 
+    // LAUNCHPAD PRESETS
+    lp_menu:        "presets",
+    lp_fast:        "fast",
+    lp_balanced:    "balanced",
+    lp_fine:        "fine",
+
     // FDM SLICING
     sl_menu:        "layers",
     sl_lahi_s:      "height",

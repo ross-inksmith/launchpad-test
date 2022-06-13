@@ -1767,6 +1767,18 @@ gapp.register("kiri.init", [], (root, exports) => {
 
             prefadd:          uc.checkpoint($('prefs-add')),
 
+            lpPresets:           uc.newGroup(LANG.lp_menu, $('settings'), {modes:FDM, class:"xdown"}),
+            lpFine:              uc.newRow([
+                ui.preFine = uc.newButton(LANG.lp_fine, onButtonClick, {class: "f-col grow a-center"})
+            ], { modes: FDM, class: "ext-buttons f-row grow" }),
+            lpBalanced:          uc.newRow([
+                ui.preBal = uc.newButton(LANG.lp_balanced, onButtonClick, {class: "f-col grow a-center"})
+            ], { modes: FDM, class: "ext-buttons f-row grow" }),
+            lpFast:              uc.newRow([
+                ui.preFast = uc.newButton(LANG.lp_fast, onButtonClick, {class: "f-col grow a-center"})
+            ], { modes: FDM, class: "ext-buttons f-row grow" }),
+            lpSep:               uc.newGroup(undefined, $('settings'), {class: "set-sep", modes:FDM}),
+            
             process:             uc.newGroup(LANG.sl_menu, $('settings'), {modes:FDM_LZR, class:"xdown"}),
             sliceHeight:         uc.newInput(LANG.sl_lahi_s, {title:LANG.sl_lahi_l, convert:uc.toFloat, modes:FDM}),
             sliceMinHeight:      uc.newInput(LANG.ad_minl_s, {title:LANG.ad_minl_l, bound:uc.bound(0,3.0), convert:uc.toFloat, modes:FDM, show: () => ui.sliceAdaptive.checked}),

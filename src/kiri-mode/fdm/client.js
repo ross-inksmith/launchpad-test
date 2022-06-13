@@ -132,6 +132,9 @@ FDM.init = function(kiri, api) {
             return;
         }
         for (let btn of [
+            ui.preFine,
+            ui.preBal,
+            ui.preFast,
             ui.ssaGen,
             ui.ssmAdd,
             ui.ssmDun,
@@ -208,6 +211,9 @@ FDM.init = function(kiri, api) {
     });
     api.event.on("button.click", target => {
         switch (target) {
+            case api.ui.preFine: return func.presetFine();
+            case api.ui.preBal: return func.presetBal();
+            case api.ui.preFast: return func.presetFast();
             case api.ui.ssaGen: return func.sgen();
             case api.ui.ssmAdd: return func.sadd();
             case api.ui.ssmDun: return func.sdone();
@@ -217,6 +223,15 @@ FDM.init = function(kiri, api) {
                 // });
                 func.sclear();
         }
+    });
+    api.event.on("fdm.presets.fine", func.presetFine = () => {
+        console.log("F I N E");
+    });
+    api.event.on("fdm.presets.bal", func.presetBal = () => {
+        console.log("B A L A N C E D");
+    });
+    api.event.on("fdm.presets.fast", func.presetFast = () => {
+        console.log("F A S T");
     });
     api.event.on("fdm.supports.detect", func.sgen = () => {
         let alerts = [];
