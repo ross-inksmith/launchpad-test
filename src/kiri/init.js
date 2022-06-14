@@ -1600,7 +1600,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             setup:              $('mod-setup'),
             prefs:              $('mod-prefs'),
             files:              $('mod-files'),
-            // saves:              $('mod-saves'),
+            saves:              $('mod-saves'),
             tools:              $('mod-tools'),
             print:              $('mod-print'),
             local:              $('mod-local'),
@@ -1636,7 +1636,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             setMenu:            $('set-menu'),
             settings:           $('settings'),
             settingsBody:       $('settingsBody'),
-            // settingsList:       $('settingsList'),
+            settingsList:       $('settingsList'),
 
             slider:             $('slider'),
             sliderMax:          $('slider-max'),
