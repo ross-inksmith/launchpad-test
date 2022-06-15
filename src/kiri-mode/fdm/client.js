@@ -225,13 +225,40 @@ FDM.init = function(kiri, api) {
         }
     });
     api.event.on("fdm.presets.fine", func.presetFine = () => {
-        console.log("F I N E");
+        let diff = {
+            "outputFeedrate": 35,
+            "outputFinishrate": 25,
+            "outputRaftSpacing": 0.2,
+            "sliceFillSparse": 0.25,
+            "sliceHeight": 0.15,
+            "sliceShells": 3,
+            "sliceTopLayers": 7
+        };
+        updatePresetSettings(diff);
     });
-    api.event.on("fdm.presets.bal", func.presetBal = () => {
-        console.log("B A L A N C E D");
+    api.event.on("fdm.presets.balanced", func.presetBal = () => {
+        let diff = {
+            "outputFeedrate": 40,
+            "outputFinishrate": 30,
+            "outputRaftSpacing": 0.16,
+            "sliceFillSparse": 0.18,
+            "sliceHeight": 0.2,
+            "sliceShells": 3,
+            "sliceTopLayers": 6
+        };
+        updatePresetSettings(diff);
     });
     api.event.on("fdm.presets.fast", func.presetFast = () => {
-        console.log("F A S T");
+        let diff = {
+            "outputFeedrate": 40,
+            "outputFinishrate": 30,
+            "outputRaftSpacing": 0.14,
+            "sliceFillSparse": 0.1,
+            "sliceHeight": 0.3,
+            "sliceShells": 2,
+            "sliceTopLayers": 5
+        };
+        updatePresetSettings(diff);
     });
     api.event.on("fdm.supports.detect", func.sgen = () => {
         let alerts = [];
@@ -565,6 +592,13 @@ FDM.init = function(kiri, api) {
 let xpdebug;
 let supsave = {};
 let suptimer;
+
+// diff: the settings in conf.process to change
+function updatePresetSettings(diff){
+    let newSettings = api.conf.get();
+    newSettings.process = {...newSettings.process, ...diff};
+    api.conf.put(newSettings);
+}
 
 function scheduleSupportSave(widget) {
     clearTimeout(suptimer);
