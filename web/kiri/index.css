@@ -246,6 +246,9 @@ th, tr, td, label {
 .mh85 {
     max-height: 85%;
 }
+.preset-button {
+    height: 3em !important;
+}
 
 :-moz-any() {
     overflow-x: hidden !important;

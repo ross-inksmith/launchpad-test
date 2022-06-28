@@ -1769,13 +1769,13 @@ gapp.register("kiri.init", [], (root, exports) => {
 
             lpPresets:           uc.newGroup(LANG.lp_menu, $('settings'), {modes:FDM, class:"xdown"}),
             lpFine:              uc.newRow([
-                ui.preFine = uc.newButton(LANG.lp_fine, onButtonClick, {class: "f-col grow a-center"})
+                ui.preFine = uc.newButton(LANG.lp_fine, onButtonClick, {class: "preset-button f-col grow a-center"})
             ], { modes: FDM, class: "ext-buttons f-row grow" }),
             lpBalanced:          uc.newRow([
-                ui.preBal = uc.newButton(LANG.lp_balanced, onButtonClick, {class: "f-col grow a-center"})
+                ui.preBal = uc.newButton(LANG.lp_balanced, onButtonClick, {class: "preset-button f-col grow a-center"})
             ], { modes: FDM, class: "ext-buttons f-row grow" }),
             lpFast:              uc.newRow([
-                ui.preFast = uc.newButton(LANG.lp_fast, onButtonClick, {class: "f-col grow a-center"})
+                ui.preFast = uc.newButton(LANG.lp_fast, onButtonClick, {class: "preset-button f-col grow a-center"})
             ], { modes: FDM, class: "ext-buttons f-row grow" }),
             lpSep:               uc.newGroup(undefined, $('settings'), {class: "set-sep", modes:FDM}),
             
