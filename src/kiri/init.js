@@ -1086,6 +1086,13 @@ gapp.register("kiri.init", [], (root, exports) => {
             }
             let opt = DOC.createElement('button');
             opt.appendChild(DOC.createTextNode(device.replace(/\./g,' ')));
+            opt.onmouseover = function() {
+                const imagePrefix = 'img/';
+                const globalDeviceList = window.devices[api.mode.get_lower()];
+                const globalDeviceAttributes = globalDeviceList[device];
+                const filename = globalDeviceAttributes['device-image'];
+                ui.photo.src = `${imagePrefix}${filename}`;
+            };
             opt.onclick = function() {
                 selectDevice(device);
                 opt.classList.add("selected");
@@ -1605,6 +1612,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             print:              $('mod-print'),
             local:              $('mod-local'),
             any:                $('mod-any'),
+            photo:              $('device-photo'),
 
             catalogBody:        $('catalogBody'),
             catalogList:        $('catalogList'),

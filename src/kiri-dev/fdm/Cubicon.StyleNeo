@@ -1,4 +1,5 @@
 {
+    "device-image": "neo.png",
     "pre":[
         "T{tool}                ; select extruder #0",
         "M104 S{temp}           ; set nozzle temp",

@@ -43,6 +43,9 @@ a, a:hover, a:visited {
     border: 0;
     margin: 0;
 }
+#device-photo {
+    max-width: 300px;
+}
 #launchpad-logo {
     height: 2em;
     padding: 0.5em;
@@ -990,8 +993,8 @@ th, tr, td, label {
     right: 5px;
 }
 #mod-setup {
-    height: 550px;
-    width: 725px;
+    height: 350px;
+    width: 500px;
     padding-bottom: 5px;
 }
 #mod-setup .header {
