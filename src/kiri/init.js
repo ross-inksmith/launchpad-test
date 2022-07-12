@@ -1007,13 +1007,24 @@ gapp.register("kiri.init", [], (root, exports) => {
     }
 
     function renderDevices(devices) {
-        function changeDeviceImage(device) {
-            const imagePrefix = 'img/';
+        function getDeviceFilename(device) {
             const globalDeviceList = window.devices[api.mode.get_lower()];
-            const highlightDevice = device || currentDevice?.deviceName || selected;
-            const filename = globalDeviceList[highlightDevice]['device-image'];
-            ui.devicePhoto.src = `${imagePrefix}${filename}`;
-            ui.deviceLabel.innerHTML = highlightDevice;
+            if (! (device in globalDeviceList)) return undefined;
+            if (!('device-image' in globalDeviceList[device])) return undefined;
+            return globalDeviceList[device]['device-image'];
+        }
+        function setDeviceImage(device) {
+            const imagePrefix = 'img/';
+            device = device || api.device.get();
+            const filename = getDeviceFilename(device);
+            if (filename) {
+                ui.devicePhoto.class = '';
+                ui.devicePhoto.src = `${imagePrefix}${filename || 'placeholder.png'}`;
+            } else {
+                ui.devicePhoto.src = '';
+                ui.devicePhoto.class = 'fas fa-cogs';
+            }
+            ui.deviceLabel.innerHTML = device;
         }
 
         let selectedIndex = -1,
@@ -1068,7 +1079,7 @@ gapp.register("kiri.init", [], (root, exports) => {
             api.device.export(exp, selected, { event, record });
         };
 
-        changeDeviceImage();
+        setDeviceImage();
 
         ui.deviceList.innerHTML = '';
         ui.deviceMy.innerHTML = '';
@@ -1098,10 +1109,10 @@ gapp.register("kiri.init", [], (root, exports) => {
             let opt = DOC.createElement('button');
             opt.appendChild(DOC.createTextNode(device.replace(/\./g,' ')));
             opt.onmouseover = function() {
-                changeDeviceImage(device);
+                setDeviceImage(device);
             };
             opt.onmouseleave = function() {
-                changeDeviceImage();
+                setDeviceImage();
             };
             opt.onclick = function() {
                 selectDevice(device);
