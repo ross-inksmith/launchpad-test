@@ -31,7 +31,7 @@
     <div id="top" class="f-row">
         <div id="app-mode">
             <div id="mode-info" class="f-row">
-                <label>Mode</label><div id="app-mode-name"></div>
+                <label class="launchpad-hide">Mode</label><div id="app-mode-name" class="launchpad-hide"></div>
                 <label>Device</label><div id="mode-device"></div>
             </div>
         </div>
@@ -332,15 +332,16 @@
                 </div>
                 <div id="mod-setup" class="mdialog f-row">
                     <div class="f-col left a-stretch">
-                        <label class="header" lk="dm_sldt">select a device type</label>
-                        <div class="f-col">
+                        <label class="header" lk="dm_mydd">my devices</label>
+                        <!-- <label class="header launchpad-hide" lk="dm_sldt">select a device type</label> -->
+                        <div class="f-col launchpad-hide">
                             <table><tr>
                                 <th><button id="mode-fdm" class="dev-type"><label>FDM</label></button></th>
                                 <th><button id="mode-laser" class="dev-type"><label>LASER</label></button></th>
                             </tr></table>
                         </div>
                         <div id="dev-header" class="header sub f-col j-center">
-                            <label lk="dm_stdd">standard devices</label>
+                            <!-- <label lk="dm_stdd">standard devices</label> -->
                             <div id="dev-search">
                                 <i class="fas fa-search"></i>
                                 <input id="dev-filter" />
