@@ -1082,6 +1082,9 @@ gapp.register("kiri.init", [], (root, exports) => {
         setDeviceImage();
 
         ui.deviceList.innerHTML = '';
+        ui.deviceList.onmouseleave = function() {
+            setDeviceImage();
+        };
         ui.deviceMy.innerHTML = '';
         let incr = 0;
         let found = null;
@@ -1110,9 +1113,6 @@ gapp.register("kiri.init", [], (root, exports) => {
             opt.appendChild(DOC.createTextNode(device.replace(/\./g,' ')));
             opt.onmouseover = function() {
                 setDeviceImage(device);
-            };
-            opt.onmouseleave = function() {
-                setDeviceImage();
             };
             opt.onclick = function() {
                 selectDevice(device);
