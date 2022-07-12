@@ -1007,6 +1007,15 @@ gapp.register("kiri.init", [], (root, exports) => {
     }
 
     function renderDevices(devices) {
+        function changeDeviceImage(device) {
+            const imagePrefix = 'img/';
+            const globalDeviceList = window.devices[api.mode.get_lower()];
+            const highlightDevice = device || currentDevice?.deviceName || selected;
+            const filename = globalDeviceList[highlightDevice]['device-image'];
+            ui.devicePhoto.src = `${imagePrefix}${filename}`;
+            ui.deviceLabel.innerHTML = highlightDevice;
+        }
+
         let selectedIndex = -1,
             selected = api.device.get(),
             features = api.feature,
@@ -1059,6 +1068,8 @@ gapp.register("kiri.init", [], (root, exports) => {
             api.device.export(exp, selected, { event, record });
         };
 
+        changeDeviceImage();
+
         ui.deviceList.innerHTML = '';
         ui.deviceMy.innerHTML = '';
         let incr = 0;
@@ -1087,11 +1098,10 @@ gapp.register("kiri.init", [], (root, exports) => {
             let opt = DOC.createElement('button');
             opt.appendChild(DOC.createTextNode(device.replace(/\./g,' ')));
             opt.onmouseover = function() {
-                const imagePrefix = 'img/';
-                const globalDeviceList = window.devices[api.mode.get_lower()];
-                const globalDeviceAttributes = globalDeviceList[device];
-                const filename = globalDeviceAttributes['device-image'];
-                ui.photo.src = `${imagePrefix}${filename}`;
+                changeDeviceImage(device);
+            };
+            opt.onmouseleave = function() {
+                changeDeviceImage();
             };
             opt.onclick = function() {
                 selectDevice(device);
@@ -1612,7 +1622,8 @@ gapp.register("kiri.init", [], (root, exports) => {
             print:              $('mod-print'),
             local:              $('mod-local'),
             any:                $('mod-any'),
-            photo:              $('device-photo'),
+            deviceLabel:        $('device-label'),
+            devicePhoto:        $('device-photo'),
 
             catalogBody:        $('catalogBody'),
             catalogList:        $('catalogList'),
