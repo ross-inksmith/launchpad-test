@@ -223,6 +223,7 @@ function init(mod) {
     mod.add(handleSetup);
     mod.add(handleOptions);
     mod.add(fullpath({
+        "/"                : redir("/kiri/", 301),
         "/kiri"            : redir("/kiri/", 301),
         "/mesh"            : redir("/mesh/", 301),
         "/meta"            : redir("/meta/", 301),
