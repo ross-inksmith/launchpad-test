@@ -1,5 +1,5 @@
 {
-    "device-image": "style-plus.jpg",
+    "device-image": "img/style-plus.jpg",
     "pre":[
         "T{tool}                ; select extruder #0",
         "M104 S{temp}           ; set nozzle temp",

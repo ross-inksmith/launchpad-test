@@ -1,5 +1,5 @@
 {
-    "device-image": "orbit.png",
+    "device-image": "img/orbit.png",
     "pre":[
         "M82                 ; absolute extrusion mode",
         "G28                 ; home axes",

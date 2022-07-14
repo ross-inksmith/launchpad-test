@@ -1014,15 +1014,14 @@ gapp.register("kiri.init", [], (root, exports) => {
             return globalDeviceList[device]['device-image'];
         }
         function setDeviceImage(device) {
-            const imagePrefix = 'img/';
             device = device || api.device.get();
             const filename = getDeviceFilename(device);
             if (filename) {
-                ui.devicePhoto.class = '';
-                ui.devicePhoto.src = `${imagePrefix}${filename || 'placeholder.png'}`;
+                ui.devicePhoto.classList.remove('fas','fa-cogs');
+                ui.devicePhoto.src = filename
             } else {
                 ui.devicePhoto.src = '';
-                ui.devicePhoto.class = 'fas fa-cogs';
+                ui.devicePhoto.classList.add('fas','fa-cogs');
             }
             ui.deviceLabel.innerHTML = device;
         }
@@ -1079,8 +1078,6 @@ gapp.register("kiri.init", [], (root, exports) => {
             api.device.export(exp, selected, { event, record });
         };
 
-        setDeviceImage();
-
         ui.deviceList.innerHTML = '';
         ui.deviceList.onmouseleave = function() {
             setDeviceImage();
@@ -1090,6 +1087,7 @@ gapp.register("kiri.init", [], (root, exports) => {
         let found = null;
         let first = devices[0];
         let dedup = {};
+        let photoPreCache = new THREE.ImageLoader();
         devices.forEach(function(device, index) {
             // prevent device from appearing twice
             // such as local name = standard device name
@@ -1114,6 +1112,10 @@ gapp.register("kiri.init", [], (root, exports) => {
             opt.onmouseover = function() {
                 setDeviceImage(device);
             };
+            photoPreCache.load(
+                getDeviceFilename(device),
+                () => {}
+            );
             opt.onclick = function() {
                 selectDevice(device);
                 opt.classList.add("selected");
@@ -1143,6 +1145,8 @@ gapp.register("kiri.init", [], (root, exports) => {
         } else {
             selectDevice(first);
         }
+
+        setDeviceImage();
     }
 
     function renderTools() {
