@@ -353,7 +353,7 @@ const conf = exports({
                 outputRetractDist: 1.5,
                 outputRetractSpeed: 40,
                 outputRetractWipe: 0,
-                outputRetractDwell: 20,
+                outputRetractDwell: 0,
                 outputBrimCount: 2,
                 outputBrimOffset: 2,
                 outputShortPoly: 100.0,
