@@ -1,0 +1,38 @@
+{
+    "device-image": "https://cdn.shopify.com/s/files/1/0936/6484/files/soft-serve-ice-cream-machine-serving_chocolate_ice_cream_in_a_vanilla_cone_for_customer_large.jpg?v=1494357841",
+    "pre":[
+        "M104 S{temp} T{tool}     ; set extruder temperature",
+        "M190 S{bed_temp} T{tool} ; set bed temperature",
+        "M109 S{temp} T{tool}     ; set extruder temperature",
+        "M82                      ; set absolute positioning for extruder",
+        "M911 InkSmith MakerForge",
+        "M201 X400 Y400",
+        "M202 X400 Y400",
+        "G28                 ; home axes",
+        "G92 E0              ; reset all axes positions",
+        "G1 F200 E3",
+        "G92 E0              ; zero the extruder",
+        "G92 E0              ; zero the extruded",
+        "G92 E0              ; I don't know why this is done 3 times",
+        "G1 F2400 E-1.5"
+    ],
+    "post":[
+        "M107                ; turn off filament cooling fan",
+        "M104 S0 T{tool}     ; turn off right extruder",
+        "M140 S0             ; turn off bed",
+        "M904                ; park extruder",
+        "M117 Print completed!",
+        "M84                 ; disable stepper motors"
+    ],
+    "cmd":{
+        "fan_power": "M106 S{fan_speed}"
+    },
+    "file-ext": "gcode",
+    "settings":{
+        "origin_center": false,
+        "extrude_abs": true,
+        "bed_width": 232,
+        "bed_depth": 212,
+        "build_height": 301
+    }
+}

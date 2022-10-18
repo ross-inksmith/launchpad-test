@@ -45,6 +45,7 @@ a, a:hover, a:visited {
 }
 #device-photo {
     max-width: 300px;
+    max-height: 350px;
 }
 #launchpad-logo {
     height: 2em;
