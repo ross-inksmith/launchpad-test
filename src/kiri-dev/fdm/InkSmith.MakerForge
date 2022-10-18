@@ -1,5 +1,5 @@
 {
-    "device-image": "https://cdn.shopify.com/s/files/1/0936/6484/files/soft-serve-ice-cream-machine-serving_chocolate_ice_cream_in_a_vanilla_cone_for_customer_large.jpg?v=1494357841",
+    "device-image": "img/makerforge.png",
     "pre":[
         "M104 S{temp} T{tool}     ; set extruder temperature",
         "M190 S{bed_temp} T{tool} ; set bed temperature",
