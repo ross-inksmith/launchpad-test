@@ -5,7 +5,7 @@
         "M190 S{bed_temp} T{tool} ; set bed temperature",
         "M109 S{temp} T{tool}     ; set extruder temperature",
         "M82                      ; set absolute positioning for extruder",
-        "M911 InkSmith MakerForge",
+        "M911 Optimus-C23",
         "M201 X400 Y400",
         "M202 X400 Y400",
         "G28                 ; home axes",
