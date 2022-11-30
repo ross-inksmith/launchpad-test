@@ -310,9 +310,8 @@ th, tr, td, label {
 
 #mode-info {
     display: none;
-    xposition: absolute;
     white-space: nowrap;
-    font-size: smaller;
+    font-size: larger;
     font-family: sans-serif;
     top: 50%;
     height: 100%;
@@ -325,9 +324,9 @@ th, tr, td, label {
     font-size: smaller;
     font-weight: bold;
     margin-left: 5px;
-    padding: 2px 5px 2px 5px;
-    color: var(--fg-gray);
-    background-color: #eee;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    color: black;
+    background-color: var(--main-color);
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-top: 1px solid #ddd;
@@ -336,9 +335,10 @@ th, tr, td, label {
 }
 #mode-info > div {
     font-size: smaller;
-    padding: 2px 5px 2px 5px;
     color: var(--fg-gray);
+    padding: 0.25em 0.5em 0.25em 0.5em;
     background-color: white;
+    border-color: var(--main-color);
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     border-top: 1px solid #ddd;
